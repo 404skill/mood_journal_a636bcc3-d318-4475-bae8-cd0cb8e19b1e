@@ -1,0 +1,16 @@
+{
+  "name": "mood-journal-api",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "next build",
+    "start": "next start -p 3000"
+  },
+  "dependencies": {
+    "@huggingface/inference": "^4.0.6",
+    "mysql2": "^3.0.0",
+    "next": "latest",
+    "sequelize": "^6.0.0",
+    "uuid": "^9.0.0"
+  }
+}
