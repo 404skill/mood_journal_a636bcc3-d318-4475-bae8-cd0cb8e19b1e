@@ -26,7 +26,6 @@ services:
       - "3000:3000"
     environment:
       DATABASE_URL: mysql://root:example@db:3306/journal
-      HUGGING_FACE_TOKEN: "${HUGGING_FACE_TOKEN}"
     depends_on:
       db:
         condition: service_healthy

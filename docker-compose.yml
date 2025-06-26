@@ -1,3 +1,5 @@
+version: '3.9'
+
 services:
   db:
     image: mysql:8.0
@@ -10,14 +12,20 @@ services:
       - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
       - "3306:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-pexample"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 120s
 
   app:
     build: .
+    container_name: mood-journal-api
     ports:
       - "3000:3000"
     environment:
       DATABASE_URL: mysql://root:example@db:3306/journal
-      HUGGING_FACE_TOKEN: "${HUGGING_FACE_TOKEN}"
     depends_on:
-      - db
-    restart: on-failure
+      db:
+        condition: service_healthy
