@@ -39,10 +39,10 @@ services:
   tests:
     build: ../.tests/mood_journal_a636bcc3-d318-4475-bae8-cd0cb8e19b1e
     container_name: mood-journal-tests
-    working_dir: /app
+    working_dir: /usr/src/app
     volumes:
-      - ../.tests/mood_journal_a636bcc3-d318-4475-bae8-cd0cb8e19b1e:/app:rw
-      - ../.tests/mood_journal_a636bcc3-d318-4475-bae8-cd0cb8e19b1e/test-reports:/app/test-reports:rw
+      - ../.tests/mood_journal_a636bcc3-d318-4475-bae8-cd0cb8e19b1e:/usr/src/app:rw
+      - ../.tests/mood_journal_a636bcc3-d318-4475-bae8-cd0cb8e19b1e/test-reports:/usr/src/app/test-reports:rw
     depends_on:
       db:
         condition: service_healthy

@@ -3,7 +3,7 @@ FROM node:24
 WORKDIR /usr/src/app
 
 COPY package.json package-lock.json ./
-RUN npm ci --only=production
+RUN npm ci
 
 COPY . .
 
