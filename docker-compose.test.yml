@@ -41,7 +41,7 @@ services:
     container_name: mood-journal-tests
     working_dir: /usr/src/app
     volumes:
-      - ../.tests/mood_journal_a636bcc3-d318-4475-bae8-cd0cb8e19b1e/test-reports:/usr/src/app/test-reports:rw
+      - ../.tests/mood_journal_a636bcc3-d318-4475-bae8-cd0cb8e19b1e:/app
     depends_on:
       db:
         condition: service_healthy
