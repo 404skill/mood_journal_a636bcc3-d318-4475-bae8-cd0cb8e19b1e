@@ -21,7 +21,7 @@ services:
 
   app:
     build: .
-    container_name: mood-journal-api
+    container_name: mood-journal-api-a636bcc3-d318-4475-bae8-cd0cb8e19b1e
     ports:
       - "3000:3000"
     environment:
